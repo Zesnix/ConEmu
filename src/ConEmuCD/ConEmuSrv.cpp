@@ -52,6 +52,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "../common/WConsoleInfo.h"
 #include "../common/WFiles.h"
 #include "../common/WThreads.h"
+#include "../common/WObjects.h"
 #include "../common/WUser.h"
 //#include "TokenHelper.h"
 #include "ConProcess.h"
@@ -1615,7 +1616,7 @@ int WorkerServer::ProcessCommandLineArgs()
 	const int baseRc = WorkerBase::ProcessCommandLineArgs();
 	if (baseRc != 0)
 		return baseRc;
-	
+
 	LogFunction(L"ParseCommandLine{in-progress-server}");
 
 	// ReSharper disable once CppInitializedValueIsAlwaysRewritten
@@ -1654,7 +1655,7 @@ int WorkerServer::ProcessCommandLineArgs()
 			return iRc;
 	}
 
-	
+
 	return 0;
 }
 

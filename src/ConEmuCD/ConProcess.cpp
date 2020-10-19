@@ -76,7 +76,7 @@ ConProcess::ConProcess(const MModule& kernel32)
 			}
 		}
 	}
-	
+
 	csProc = new MSection();
 
 	if (pnProcesses.resize(START_MAX_PROCESSES)
@@ -454,7 +454,7 @@ INT_PTR ConProcess::GetXRequestIndex(DWORD pid, bool create)
 	{
 		if (xRequests[i].pid == pid)
 		{
-			// pid==0 is used to 
+			// pid==0 is used to
 			if (create && pid)
 			{
 				// Move it to the end of the queue
@@ -712,14 +712,14 @@ bool ConProcess::CheckProcessCount(const bool abForce/*=FALSE*/)
 	DWORD nCurProcessesDbg[MAX_GET_PROC_COUNT] = {};
 	// for debugging, save previous console state
 	DWORD nPrevProcessedDbg[MAX_GET_PROC_COUNT] = {};
-	// 
+	//
 	if (!pnProcesses.empty() && nProcessCount)
 	{
 		memmove_s(nPrevProcessedDbg, sizeof(nPrevProcessedDbg), &pnProcesses[0],
 			std::min<DWORD>(countof(nPrevProcessedDbg), nProcessCount) * sizeof(pnProcesses[0]));
 	}
 #endif
-	
+
 	if (nProcessCount == 0)
 	{
 		pnProcesses[0] = gnSelfPID;
@@ -1081,7 +1081,7 @@ MArray<DWORD> ConProcess::GetSpawnedProcesses() const
 	DWORD nProcesses[MAX_GET_PROC_COUNT] = {};
 	const DWORD nProcCount = pfnGetConsoleProcessList(nProcesses, countof(nProcesses));
 	const DWORD maxCount = std::max<DWORD>(nProcCount, countof(nProcesses));
-	
+
 	result.reserve(maxCount);
 
 	for (DWORD i = 0; i < maxCount; i++)
@@ -1108,7 +1108,7 @@ MArray<DWORD> ConProcess::GetAllProcesses() const
 	DWORD nProcesses[MAX_GET_PROC_COUNT] = {};
 	const DWORD nProcCount = pfnGetConsoleProcessList(nProcesses, countof(nProcesses));
 	const DWORD maxCount = std::max<DWORD>(nProcCount, countof(nProcesses));
-	
+
 	result.resize(maxCount);
 
 	for (DWORD i = 0; i < maxCount; i++)
