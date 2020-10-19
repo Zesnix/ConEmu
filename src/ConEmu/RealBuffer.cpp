@@ -37,7 +37,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //#define ALLOWUSEFARSYNCHRO
 
 #include "Header.h"
-#include <Tlhelp32.h>
 
 #include "../common/ConEmuCheck.h"
 #include "../common/EnvVar.h"
@@ -1598,7 +1597,7 @@ bool CRealBuffer::InitBuffers(DWORD anCellCount /*= 0*/, int anWidth /*= 0*/, in
 
 		// Is not critical anymore, it's locked just for flickering minimization
 		_ASSERTE(con.nInGetConsoleData==0);
-		
+
 		HEAPVAL
 
 		swprintf_c(szLog, L"InitBuffers Width=%u Height=%u Cells=%u (done)", nNewWidth, nNewHeight, nCellCount);

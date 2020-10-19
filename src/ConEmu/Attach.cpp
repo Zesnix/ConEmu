@@ -29,7 +29,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define HIDE_USE_EXCEPTION_INFO
 
 #include "Header.h"
-#include <Tlhelp32.h>
+#include <tlhelp32.h>
 #include "ConEmu.h"
 #include "Attach.h"
 #include "DynDialog.h"
@@ -38,7 +38,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "OptionsClass.h"
 #include "VConGroup.h"
 #include "../common/ConEmuCheck.h"
-#include "../common/Monitors.h"
 #include "../common/MProcessBits.h"
 #include "../common/ProcessData.h"
 #include "../common/WThreads.h"
