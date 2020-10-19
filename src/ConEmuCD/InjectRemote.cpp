@@ -38,8 +38,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "../ConEmu/version.h"
 #include "../ConEmuHk/Injects.h"
 
-#include <Tlhelp32.h>
-
 // 0 - OK, иначе - ошибка
 // Здесь вызывается CreateRemoteThread
 CINFILTRATE_EXIT_CODES InfiltrateDll(HANDLE hProcess, HMODULE ptrOuterKernel, LPCWSTR asConEmuHk)
